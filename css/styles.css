@@ -1,0 +1,433 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f2; /* light background */
+  margin: 0;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gang-description-flex {
+  display: flex;
+  gap: 40px;
+  max-width: 1600px;
+  margin: 0 auto 48px auto;
+  background: #f0f0f2;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(22, 32, 38, 0.07);
+  padding: 24px 48px 32px 48px;
+  color: #162026;
+  font-family: "Mozilla Text", "Raleway", Arial, sans-serif;
+  font-size: 1.45em;
+  line-height: 1.8;
+}
+
+.gang-block {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #9fb3bf22;
+  border-radius: 14px;
+  padding: 24px 20px;
+  box-sizing: border-box;
+}
+
+.gang-block-left {
+  align-items: flex-start;
+}
+
+.gang-block-center {
+  align-items: center;
+  text-align: center;
+}
+
+.gang-block-right {
+  align-items: center; /* выравнивание по центру */
+  text-align: center; /* текст по центру */
+}
+
+.gang-block-right .gang-section,
+.gang-block-right ul,
+.gang-block-right p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Стили для заголовка */
+.mozilla-headline-bold {
+  font-family: "Mozilla Headline", sans-serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  color: #162026; /* самый тёмный цвет */
+  text-shadow: 2px 2px 4px #8198a6;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.1em;
+  line-height: 1.05; /* уменьшил межстрочный интервал */
+}
+
+/* Blur Reveal Effect for H1 */
+.blur-reveal {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(var(--blur-y, -50px));
+  animation: blurRevealAnim 1.2s cubic-bezier(0.5, 1.5, 0.5, 1) forwards;
+  will-change: filter, opacity, transform;
+  margin-right: 0.45em; /* увеличил отступ между словами */
+}
+.blur-reveal:last-child {
+  margin-right: 0;
+}
+@keyframes blurRevealAnim {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(var(--blur-y, -50px));
+  }
+  60% {
+    opacity: 0.5;
+    filter: blur(5px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  flex: 1 1 350px;
+  max-width: 450px;
+  min-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px #8198a6;
+  transition: all 0.3s;
+  background: #f0f0f2;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #162026;
+  z-index: 10;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item:nth-child(odd) {
+  transform: rotate(2deg);
+}
+
+.gallery-item:nth-child(even) {
+  transform: rotate(-1deg);
+}
+
+.gallery-item:nth-child(3n) {
+  transform: rotate(3deg);
+}
+
+.gallery-item:hover {
+  transform: rotate(0deg) scale(1.1);
+}
+
+/* Разные размеры для элементов */
+.gallery-item:nth-child(5n + 1) {
+  flex-grow: 1.2;
+}
+
+.gallery-item:nth-child(7n + 2) {
+  flex-grow: 0.8;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 40px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(22, 32, 38, 0.85);
+  text-align: center;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 32px #162026;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 48px;
+  color: #8198a6;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1100;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #ff6b6b;
+}
+
+.gang-description {
+  max-width: 1600px;
+  margin: 0 auto 48px auto;
+  background: rgba(201, 206, 157, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  padding: 24px 48px 32px 48px; /* уменьшил верхний паддинг */
+  color: #2d3a2e;
+  font-family: "Mozilla Text", "Raleway", Arial, sans-serif;
+  font-size: 1.45em;
+  line-height: 1.8;
+}
+
+.gang-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 2.7em;
+  color: #b6c36b;
+  margin-top: 0; /* минимальный отступ сверху */
+  margin-bottom: 0.3em; /* небольшой отступ до основного текста */
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.gang-lead {
+  font-size: 1.25em;
+  color: #8c876d; /* коричневатый */
+  margin-top: 0.4em;
+  margin-bottom: 0.2em;
+  font-weight: 500;
+  text-align: left;
+}
+
+.gang-section {
+  font-family: "Mozilla Headline", sans-serif;
+  font-weight: 700;
+  color: #8198a6; /* голубой */
+  margin-top: 0.7em;
+  margin-bottom: 0.1em;
+  font-size: 1.35em;
+  letter-spacing: 0.04em;
+}
+
+.gang-block ul {
+  margin: 1em 0 1em 0;
+  padding-left: 2em;
+}
+
+.gang-block li {
+  margin-bottom: 0.7em;
+  font-size: 1.08em;
+  color: #162026;
+  list-style-position: inside;
+}
+
+.gang-block b {
+  color: #8c876d;
+  font-weight: 700;
+}
+
+/* Исправил отступы для списка */
+.gang-description ul {
+  margin: 1em 0 1em 0;
+  padding-left: 2em;
+}
+
+.gang-description li {
+  margin-bottom: 0.7em;
+  font-size: 1.08em;
+  color: #42513e;
+  list-style-position: inside; /* точки ближе к тексту */
+}
+
+.gang-description b {
+  color: #b6c36b;
+  font-weight: 700;
+}
+
+.gang-block-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.gang-block-centered .gang-section,
+.gang-block-centered p {
+  text-align: center;
+  max-width: 700px;
+}
+
+@media (max-width: 900px) {
+  .gang-description-flex {
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 8px;
+  }
+  .gang-block {
+    padding: 16px 8px;
+  }
+  .gallery-header {
+    padding: 0 8px;
+  }
+  .gallery-title {
+    font-size: 1.3em;
+  }
+}
+
+/* Стили для подвала */
+.site-footer {
+  width: 100%;
+  background: #f0f0f2;
+  box-shadow: 0 -2px 16px rgba(22, 32, 38, 0.07);
+  border-radius: 18px 18px 0 0;
+  margin: 48px auto 0 auto;
+  padding: 24px 48px;
+  color: #162026;
+  font-family: "Mozilla Text", "Raleway", Arial, sans-serif;
+  font-size: 1.25em;
+  max-width: 1600px;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-title {
+  font-family: "Mozilla Headline", sans-serif;
+  font-weight: 700;
+  color: #8198a6;
+  font-size: 1.2em;
+  margin-bottom: 0.2em;
+}
+
+.footer-rights {
+  color: #8c876d;
+  font-size: 0.95em;
+}
+
+.footer-author {
+  color: #162026;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.footer-link {
+  color: #8198a6;
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+  margin-top: 0.2em;
+}
+
+.footer-link:hover {
+  color: #162026;
+  text-decoration: underline;
+}
+
+.gallery-header {
+  max-width: 1600px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* стрелка справа */
+  padding: 0 48px;
+}
+
+.gallery-title {
+  font-family: "Mozilla Headline", sans-serif;
+  font-weight: 700;
+  font-size: 2.2em;
+  color: #162026;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+
+.gallery-title .footer-arrow {
+  margin-left: auto; /* стрелка уходит вправо */
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end; /* всё вправо */
+  gap: 1em;
+}
+
+/* Footer arrow button styles */
+.footer-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: #9fb3bf22;
+  border-radius: 8px;
+  padding: 0.28em 1.1em;
+  color: #8198a6;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.footer-arrow .arrow-icon {
+  font-size: 2em;
+  transition: transform 0.2s;
+}
+
+.footer-arrow:hover {
+  background: #8198a6;
+  color: #f0f0f2;
+}
