@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" >
+    <!-- Responsive design meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title author="contik">Guayaba Gang</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <!-- Google Fonts preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <!-- Main fonts for the site -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200..700&family=Raleway:wght@600&display=swap"
+      rel="stylesheet"
+    >
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css" >
+  </head>
+  <body>
+    <!-- Header section with gang description -->
+    <div class="header">
+      <div class="gang-description-flex">
+        <div class="gang-block gang-block-left">
+          <h1 id="blur-h1" class="mozilla-headline-bold"></h1>
+          <p class="gang-lead">
+            Мы — обычные пацаны. Никакой романтики, никакого пафоса. Просто трое
+            (а потом и больше) друзей, которые нашли свой способ тусить.
+          </p>
+          <div class="gang-block-centered">
+            <h3 class="gang-section">Как всё начиналось</h3>
+            <p>
+              Собрались в школе, потом перешли в онлайн. Сначала был SAMP (кто
+              играл — тот поймёт). Потом Rust, Fortnite, короче, всё подряд.
+              Главное — вместе.
+            </p>
+            <h3 class="gang-section">Почему "Guayaba"?</h3>
+            <p>
+              Потому что один чувак из нашей компании так назывался в дискорде.
+              Никакой глубокой философии. Просто понравилось звучание.
+            </p>
+          </div>
+        </div>
+        <div class="gang-block gang-block-center">
+          <h3 class="gang-section">Что мы делали?</h3>
+          <ul>
+            <li>
+              <b>Играли.</b> Иногда сутками. Особенно в Rust — там адреналин,
+              эмоции, истерики.
+            </li>
+            <li>
+              <b>Тусили.</b> Войсы до утра, крики, смех, иногда даже серьёзные
+              разговоры.
+            </li>
+            <li>
+              <b>Прикалывались.</b> Свои мемы, свои приколы, свои "роли" (типа
+              "Травматолога" или "Мешка").
+            </li>
+          </ul>
+          <h3 class="gang-section">Философия? Да ну нахуй.</h3>
+          <p>
+            Мы не думали о "культуре" или "легенде". Просто было весело. "Расчил
+            ловим" — это не про победы, а про кайф от процесса.
+          </p>
+          <h3 class="gang-section">Что сейчас?</h3>
+          <p>
+            Жизнь разбросала. Кто-то работает, кто-то учится, кто-то просто реже
+            заходит. Но если позвать — соберёмся. Потому что Guayaba Gang — это
+            не клан, не гильдия, а просто друзья.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery header with navigation arrow -->
+    <div class="gallery-header">
+      <h2 class="gallery-title">
+        Gallery
+        <!-- Arrow to scroll to footer -->
+        <a href="#site-footer" class="footer-arrow" id="to-footer">
+          <span class="arrow-text">подвал</span>
+          <span class="arrow-icon">&#8595;</span>
+        </a>
+      </h2>
+    </div>
+    <!-- Gallery images will be added automatically by JS -->
+    <div class="gallery" id="gallery">
+      <!-- Images will be added automatically -->
+    </div>
+
+    <!-- Modal for viewing full-size images -->
+    <div id="modal" class="modal" style="display: none">
+      <span class="close" id="modalClose">&times;</span>
+      <img class="modal-content" id="modalImg" src="" alt="Full Image" />
+    </div>
+
+    <!-- Gallery script for dynamic image loading and modal logic -->
+    <script src="js\gallery.js"></script>
+
+    <!-- Footer section -->
+    <footer class="site-footer" id="site-footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <span class="footer-title">Guayaba Gang</span>
+          <span class="footer-rights">© Все права защищены</span>
+        </div>
+        <div class="footer-center">
+          <span class="footer-author">Автор: contik</span>
+        </div>
+        <div class="footer-right">
+          <!-- Discord link -->
+          <a
+            class="footer-link"
+            href="https://discord.gg/hxAzUqJUkS"
+            target="_blank"
+            rel="noopener"
+          >
+            Наш Discord
+          </a>
+          <!-- Arrow to scroll up to top -->
+          <a class="footer-arrow" id="to-gallery" style="display: none">
+            <span class="arrow-text">наверх</span>
+            <span class="arrow-icon">&#8593;</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
