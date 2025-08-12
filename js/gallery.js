@@ -85,6 +85,7 @@ const imageFiles = [
   "19.jpg",
   "2.jpg",
   "20.jpg",
+  "photopea007_orig.jpg",
 ];
 
 // Path to images folder
