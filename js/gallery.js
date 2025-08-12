@@ -172,13 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Прокрутка на самый верх при клике на кнопку "наверх"
-const toGalleryBtn = document.getElementById("to-gallery");
-if (toGalleryBtn) {
-  toGalleryBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+document.getElementById("to-gallery").addEventListener("click", function (e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 // Show "to-gallery" button when scrolled down, hide when at the top
 window.addEventListener("scroll", function () {
