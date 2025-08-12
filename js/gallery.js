@@ -89,7 +89,7 @@ const imageFiles = [
 ];
 
 // Path to images folder
-const imageFolder = "/images/";
+const imageFolder = "images";
 
 // Get DOM elements for gallery and modal
 const gallery = document.getElementById("gallery");
